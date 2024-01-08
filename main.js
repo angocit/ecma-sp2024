@@ -54,5 +54,21 @@ let manga = [1,2,100,10,5,6];
 
 // let mangb = [6,...manga];
 // console.log(mangc);
-let max = Math.min(...manga);
-console.log(max);
+// let max = Math.min(...manga);
+// console.log(max);
+const result ={
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["no-extra-semi", "no-dup-keys"]
+    };
+    
+function makeList(arr){
+    const failureItems =[] ; // Change the code here
+    for (let item of arr){
+        failureItems.push(`<li class="text-warning">${item}</li>`);
+    }
+    return failureItems;
+}
+const failuresList = makeList(result.failure);
+console.log(failuresList);
+    

@@ -1,12 +1,14 @@
 // const tenham = function *(a,b){
-//     yield a-b;
 //     yield a+b;
+//     yield a-b;
 //     yield a*b;
+//     yield a/b;
 // }
 // let ktra = tenham(5,6);
-// console.log(`Hiệu là: ${ktra.next().value}`);
-// console.log(`Tổng là: ${ktra.next().value}`);
-// console.log(`Tích là: ${ktra.next().value}`);
+// console.log(`Tong 2 so la: ${ktra.next().value}`);
+// console.log(`Hiệu 2 so la: ${ktra.next().value}`);
+// console.log(`Tích 2 so la: ${ktra.next().value}`);
+// console.log(`Thương 2 so la: ${ktra.next().value}`);
 // const obj = {
 //     firstname: "Ngô",
 //     lastname: "Khá",
@@ -15,19 +17,28 @@
 //     }
 // }
 // console.log(obj.fullname());
-// class Khuvuc{
-//     constructor(khuvuc,vitri){
-//         this.tenkhuvuc = khuvuc;
-//         this.vitri = vitri;
-//     }
-// }
-// class Quocgia extends Khuvuc{
-//     constructor(tenquocgia,dantoc,khuvuc,vitri){
-//         super(khuvuc,vitri);
-//         this.tenquocgia = tenquocgia;
-//         this.dantoc = dantoc;
-//     }
-// }
+class WD18327{
+    constructor(tentruong, chuyennganh){
+        this.tentruong = tentruong;
+        this.chuyennganh = chuyennganh;
+    }
+}
+class Sinhvien extends WD18327{
+    constructor(tensinhvien,namsinh,tentruong,chuyennganh){
+        super(tentruong,chuyennganh);
+        this.tensinhvien= tensinhvien,
+        this.namsinh = namsinh
+    }
+    hienthi(){
+        console.log(`Tên sinh viên là: ${this.tensinhvien}`);
+        console.log(`Năm sinh: ${this.namsinh}`);
+        console.log(`Chuyên ngành: ${this.chuyennganh}`);
+        console.log(`Trường: ${this.chuyennganh}`);
+    }
+}
+let lop = new WD18327("CĐ FPT Polytechnic","Marketing");
+let sv = new Sinhvien("Nguyễn ĐỨc Anh",2005,lop.tentruong,lop.chuyennganh);
+sv.hienthi();
 // let kv = new Khuvuc("Đông Nam Á","Châu Á");
 // // console.log(`Khu vực: ${kv.tenkhuvuc}`);
 // let quocgia = new Quocgia("Vietnam","Kinh",kv.tenkhuvuc,kv.vitri);

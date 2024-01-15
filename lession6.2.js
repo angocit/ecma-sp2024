@@ -1,4 +1,23 @@
-
+// setTimeout(()=>{
+//     console.log('so1');
+//     setTimeout(()=>{
+//         console.log('so2');
+//         setTimeout(()=>{
+//             console.log('so3');
+//             setTimeout(()=>{
+//                 console.log('so4');
+//             },0);
+//         },0);
+//     },0);
+// },0);
+// let promise = new Promise((resolve, reject) =>{
+//     reject("So1")
+// });
+// promise.then((result)=>{
+// console.log(result);
+// }).catch((err)=>{
+//  console.log('Lỗi',err);
+// });
 // let a = setTimeout(()=>{
 //     console.log(`so 1`);
 //     setTimeout(()=>{
@@ -11,7 +30,7 @@
 // let promise = new Promise((resolve, reject) =>{
 //     setTimeout(()=>{
 //         resolve(1);
-//     },1000);
+//     },2000);
 
 // });
 // // console.log(promise);
@@ -44,35 +63,35 @@
 
 // const asyncdemo = ()=>{
 //     let data = fetch('https://dummyjson.com/products');
-//     // console.log(data);
 //     data.then((response)=>{
 //         console.log(response);
 //         return response.json();
 //     }).then((response)=>{
-//         console.log(response.products);
+//         // console.log(response);
 //     });
 // }
 // asyncdemo();
-// const asyncdemo = async ()=>{
-//     let data = await fetch('https://dummyjson.com/products');
-//     // console.log(data);
-//     let products = await data.json();
-//     console.log(products);
-// }
-const content = document.getElementById("product-content");
-async function asyncdemo(){
+const asyncdemo = async ()=>{
     let data = await fetch('https://dummyjson.com/products');
-    // console.log(data);
-    const products = await data.json();
-    const product = products.products;
-    product.map(({title,thumbnail,price})=>{
-        // console.log(price);
-        let item = document.createElement("div");
-        item.classList.add("product-item");
-        item.innerHTML = `<img src = "${thumbnail}"/>
-                            <h3>${title}</h3>
-                            <span>${price}</span>`;
-        content.appendChild(item);
-    })
-}
+    let res = await data.json();
+    // console.log(res);
+    let content = document.getElementById("product-content");
+    const productarr = res.products;
+    // let html = '';
+    console.log(productarr);
+    productarr.map(({title,price,thumbnail})=>{
+    //  html +=`<div class="product-item">
+    //     <img src ="${thumbnail}"/>
+    //     <h3>${title}</h3>
+    //     <span>${price}</span>
+    //  </div>`;
+    let item = document.createElement('div');
+    item.classList.add('product-item');
+    item.innerHTML = `<img src ="${thumbnail}"/>
+         <h3>${title}</h3>
+        <span>${price}</span>`;
+        content.appendChild(item); 
+    });
+    // content.innerHTML = html;
+};
 asyncdemo();

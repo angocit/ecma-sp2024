@@ -71,6 +71,7 @@
 //     });
 // }
 // asyncdemo();
+products = [];
 const asyncdemo = async ()=>{
     let data = await fetch('https://dummyjson.com/products');
     let res = await data.json();
@@ -78,6 +79,7 @@ const asyncdemo = async ()=>{
     let content = document.getElementById("product-content");
     const productarr = res.products;
     // let html = '';
+    products = productarr;
     console.log(productarr);
     productarr.map(({title,price,thumbnail})=>{
     //  html +=`<div class="product-item">
@@ -94,4 +96,17 @@ const asyncdemo = async ()=>{
     });
     // content.innerHTML = html;
 };
-asyncdemo();
+const search = (e)=>{
+    let content = document.getElementById("product-content");
+    html = '';
+    products.map(({title,price,thumbnail})=>{
+        if (title.indexOf(e.value)>-1){
+            html +=`<div class="product-item">
+                <img src ="${thumbnail}"/>
+                <h3>${title}</h3>
+                <span>${price}</span>
+            </div>`;
+        }
+    });
+    content.innerHTML = html;
+}

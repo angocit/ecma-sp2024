@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title"
+    },
+    {
+      "id": "2",
+      "title": "another title"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "categorys": [
+    {
+      "id": "1",
+      "title": "Thời trang nữ"
+    },
+    {
+      "id": "2",
+      "title": "Thời trang nam"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Váy Chữ A Sát Nách Dáng Dài Nút Bọc VCAFM1",
+      "image": "https://hellomida.vn/wp-content/uploads/2023/09/36dd5954-48a9-47e8-b5b3-aaa69431c2c3-600x900.jpg",
+      "price": "325000",
+      "category": "1"
+    },
+    {
+      "id": "2",
+      "name": "Váy Chữ A Thiết Kế Cổ Bẻ Dáng Dài VCAFM3",
+      "image": "https://hellomida.vn/wp-content/uploads/2023/09/624f423a-6ba2-48ee-a659-4e7529ef0c61-600x900.jpg",
+      "price": "415000",
+      "category": "1"
+    },
+    {
+      "id": "4",
+      "name": "Váy Chữ A Cổ Yếm Thun Gân Dáng Dài",
+      "image": "https://hellomida.vn/wp-content/uploads/2023/09/75ed3e81-9847-4bf9-bfb3-6fa4718b7d8d-600x900.jpg",
+      "price": "269000",
+      "category": "2"
+    }
+  ]
+}

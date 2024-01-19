@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title"
+    },
+    {
+      "id": "2",
+      "title": "another title"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "products": [
+    {
+      "id": "3",
+      "title": "Sản phẩm demo 3",
+      "price": 60000,
+      "images": "Link img",
+      "description": "sdfsd s sdfsdf"
+    },
+    {
+      "id": "4",
+      "title": "Sản phẩm demo 4",
+      "price": 25000,
+      "images": "Link img 4",
+      "description": "sdfsd s sdfsdf"
+    }
+  ]
+}

@@ -17,13 +17,15 @@
 </head>
 <body>
     <div class="container">
-        <input type ="text" name="search" placeholder="Nhập từ khóa" onkeypress="search(this)" onchange="search(this)"/>
-        <button class="btn btn-primary" onclick="asyncdemo()">Tải sản phẩm</button>
+        <input type ="text" name="search" placeholder="Nhập id cần sửa/xóa"/>
+        <button class="btn btn-primary" onclick="postProduct()">Đăng sản phẩm</button>
+        <button class="btn btn-primary" onclick="editProduct()">Sửa sản phẩm</button>
+        <button class="btn btn-primary" onclick="delProduct()">Xóa sản phẩm</button>
         <div id="product-content">
 
         </div>
     </div>
     <!-- <script type="text/javascript" src="./lession6.1.js"></script> -->
-    <script type="text/javascript" src="./lession6.2.js"></script>
+    <script type="text/javascript" src="./lession7.js"></script>
 </body>
 </html>

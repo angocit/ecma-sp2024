@@ -21,24 +21,7 @@
       "postId": "1"
     }
   ],
-  "categorys": [
-    {
-      "id": "1",
-      "title": "Thời trang nữ"
-    },
-    {
-      "id": "2",
-      "title": "Thời trang nam"
-    }
-  ],
   "products": [
-    {
-      "id": "1",
-      "name": "Váy Chữ A Sát Nách Dáng Dài Nút Bọc VCAFM1",
-      "image": "https://hellomida.vn/wp-content/uploads/2023/09/36dd5954-48a9-47e8-b5b3-aaa69431c2c3-600x900.jpg",
-      "price": "325000",
-      "category": "1"
-    },
     {
       "id": "2",
       "name": "Váy Chữ A Thiết Kế Cổ Bẻ Dáng Dài VCAFM3",
@@ -48,10 +31,24 @@
     },
     {
       "id": "4",
-      "name": "Váy Chữ A Cổ Yếm Thun Gân Dáng Dài",
-      "image": "https://hellomida.vn/wp-content/uploads/2023/09/75ed3e81-9847-4bf9-bfb3-6fa4718b7d8d-600x900.jpg",
-      "price": "269000",
+      "name": "Giày nữ ABC",
+      "price": "500000",
+      "image": "https://cdn.shopify.com/s/files/1/1404/4249/files/2021-05-06.GRC02_480x480.jpg?v=1620294739",
       "category": "2"
+    }
+  ],
+  "categorys": [
+    {
+      "id": "1",
+      "name": "Quần áo"
+    },
+    {
+      "id": "2",
+      "name": "Giày dép"
+    },
+    {
+      "id": "3",
+      "name": "Phụ kiện"
     }
   ]
 }

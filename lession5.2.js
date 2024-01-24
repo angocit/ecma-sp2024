@@ -16,4 +16,4 @@ anh2.src = "https://img.freepik.com/free-psd/furniture-facebook-cover-web-banner
 // firtimg.src = "https://img.freepik.com/free-psd/furniture-facebook-cover-web-banner-template_237398-331.jpg";
 // // console.dir(firtimg);
 // // content.innerHTML = "Nội dung mới"
-// // console.log(content.innerHTML);
+// // console.log(content.innerHTML);2

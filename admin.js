@@ -1,8 +1,12 @@
 const loadProducts = async ()=>{
-    let data = await fetch('http://localhost:8000/products');
+    let data = await fetch('http://localhost:3000/products');
     let res = await data.json();
+    max = Number(maxid(res))+1;
+    document.querySelector('input[name="id"]').value = max;
+    console.log(max);
     // console.log(res);
     const tbody = document.querySelector('tbody');
+    tbody.innerHTML="";
     res.map((value,index)=>{
         let tr = document.createElement('tr');
         tr.innerHTML = `
@@ -34,15 +38,15 @@ addProduct=async ()=>{
         method: "POST",
         body: JSON.stringify(data)
     }
-    let rq = await fetch("http://localhost:8000/products",option);
+    let rq = await fetch("http://localhost:3000/products",option);
     await loadProducts();
 }
 delProduct = async(id)=>{
     let option = {
         method: "DELETE"
     }
-    let rq = await fetch("http://localhost:8000/products/"+id,option);
-    loadProducts();
+    let rq = await fetch("http://localhost:3000/products/"+id,option);
+    await loadProducts();
 }
 editProduct = async(id)=>{
     let popup = document.getElementById("editproduct");
@@ -51,7 +55,7 @@ editProduct = async(id)=>{
     let price= document.querySelector('#editproduct input[name="price"]');
     let category= document.querySelector('#editproduct select[name="category"]');
     let image= document.querySelector('#editproduct input[name="images"]');
-    let rq = await fetch("http://localhost:8000/products/"+id);
+    let rq = await fetch("http://localhost:3000/products/"+id);
     let product = await rq.json();
     console.log(product);
     tagid.value = product.id;
@@ -90,3 +94,10 @@ const updateProduct = async()=>{
     // popup.classList.remove("show");
 }
 loadProducts();
+const maxid = (data)=>{
+    let max= 0;
+    data.map(({id})=>{
+        if (max <id) max = id;
+    })
+    return max;
+}

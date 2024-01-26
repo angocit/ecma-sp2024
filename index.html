@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <script type="text/javascript" src="./main.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style type="text/css">
-    .container {max-width: 1100px; display: block; margin: auto;}
     #product-content{display: flex; flex-wrap: wrap;gap: 20px;}
     img{max-width: 100%;}
     #product-content .product-item{
@@ -16,16 +16,39 @@
 </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <div class="container">
-        <input type ="text" name="search" placeholder="Nhập id cần sửa/xóa"/>
-        <button class="btn btn-primary" onclick="postProduct()">Đăng sản phẩm</button>
-        <button class="btn btn-primary" onclick="editProduct()">Sửa sản phẩm</button>
-        <button class="btn btn-primary" onclick="delProduct()">Xóa sản phẩm</button>
+        <h1>Danh sách sản phẩm</h1>
+        <button onclick="CheckCart()">Check cart</button>
+        <button onclick="DelCart()">Del cart</button>
         <div id="product-content">
 
         </div>
     </div>
     <!-- <script type="text/javascript" src="./lession6.1.js"></script> -->
-    <script type="text/javascript" src="./lession7.js"></script>
+    <script type="text/javascript" src="./home.js"></script>
 </body>
 </html>

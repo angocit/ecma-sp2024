@@ -16,7 +16,8 @@ const RenderProduct = async()=>{
         `
         content.appendChild(div);
     });
-    console.log(products);
+    // console.log(products);
+    TotalProduct();
 }
 RenderProduct();
 
@@ -52,6 +53,7 @@ const addToCart=(e)=>{
         localStorage.setItem('cart', JSON.stringify(productinCart));
     }
     }
+    TotalProduct();
 // 
 }
 const CheckCart=()=>{
@@ -60,4 +62,16 @@ const CheckCart=()=>{
 }
 const DelCart=()=>{
     localStorage.removeItem('cart');
+}
+const TotalProduct=()=>{
+    const carts = localStorage.getItem('cart');
+    let slg = 0;
+    if (carts !== null){
+        const cartArr = JSON.parse(carts);
+        for (let item of cartArr) {
+            slg +=item.quantity; 
+        }
+        const quantity = document.querySelector('.quantity');
+        quantity.innerHTML = slg;
+    }
 }

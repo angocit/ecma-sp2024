@@ -23,18 +23,18 @@
   ],
   "products": [
     {
-      "id": "2",
-      "name": "Váy Chữ A Thiết Kế Cổ Bẻ Dáng Dài VCAFM3",
+      "name": "Váy Chữ A Thiết Kế Cổ Bẻ Dáng Dài VCAFM3 Edit",
       "price": "80000",
       "image": "https://hellomida.vn/wp-content/uploads/2023/09/624f423a-6ba2-48ee-a659-4e7529ef0c61-600x900.jpg",
-      "category": "1"
+      "category": "1",
+      "id": "2"
     },
     {
-      "id": "4",
       "name": "Giày nữ ABC",
-      "price": "60000",
+      "price": "100000",
       "image": "https://cdn.shopify.com/s/files/1/1404/4249/files/2021-05-06.GRC02_480x480.jpg?v=1620294739",
-      "category": "2"
+      "category": "2",
+      "id": "4"
     }
   ],
   "categorys": [

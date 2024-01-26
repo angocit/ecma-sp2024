@@ -3,7 +3,7 @@ const loadProducts = async ()=>{
     let res = await data.json();
     max = Number(maxid(res))+1;
     document.querySelector('input[name="id"]').value = max;
-    console.log(max);
+    // console.log(max);
     // console.log(res);
     const tbody = document.querySelector('tbody');
     tbody.innerHTML="";
@@ -48,47 +48,29 @@ delProduct = async(id)=>{
     let rq = await fetch("http://localhost:3000/products/"+id,option);
     await loadProducts();
 }
-editProduct = async(id)=>{
-    let popup = document.getElementById("editproduct");
-    let tagid = document.querySelector('#editproduct input[name="id"]');
-    let name= document.querySelector('#editproduct input[name="name"]');
-    let price= document.querySelector('#editproduct input[name="price"]');
-    let category= document.querySelector('#editproduct select[name="category"]');
-    let image= document.querySelector('#editproduct input[name="images"]');
-    let rq = await fetch("http://localhost:3000/products/"+id);
-    let product = await rq.json();
-    console.log(product);
-    tagid.value = product.id;
-    name.value = product.name;
-    price.value = product.price;
-    category.value = product.category;
-    image.value = product.image;    
-    popup.classList.add("show");
-}
 closeForm = ()=>{
     let popup = document.getElementById("editproduct");
     popup.classList.remove("show");
 }
 const updateProduct = async()=>{
     event.preventDefault();
-    let id = document.querySelector('#editproduct input[name="id"]').value;
-    let name= document.querySelector('#editproduct input[name="name"]').value;
-    let price= document.querySelector('#editproduct input[name="price"]').value;
-    let category= document.querySelector('#editproduct select[name="category"]').value;
-    let image= document.querySelector('#editproduct input[name="images"]').value;
+    const id = document.querySelector('#editproduct input[name="id"]').value
+    const name = document.querySelector('#editproduct input[name="name"]').value;
+    const category = document.querySelector('#editproduct select[name="category"]').value;
+    const image = document.querySelector('#editproduct input[name="images"]').value;
+    const price = document.querySelector('#editproduct input[name="price"]').value;
     // console.log(id,name,price,category,image);
     let data = {
-        "id": id,
-        "name": name,
-        "price": price,
-        "image": image,
-        "category": category
+        name: name,
+        price: price,
+        image: image,
+        category: category
       }
     let option = {
         method: "PUT",
         body: JSON.stringify(data)
     }
-    let rq = await fetch("http://localhost:8000/products/"+id,option);
+    let rq = await fetch("http://localhost:3000/products/"+id,option);
     await loadProducts();
     // let popup = document.getElementById("editproduct");
     // popup.classList.remove("show");
@@ -100,4 +82,22 @@ const maxid = (data)=>{
         if (max <id) max = id;
     })
     return max;
+}
+const editProduct=async(id)=>{
+    // Truy cập các node input để truyền dữ liệu vào.
+    const name = document.querySelector('#editproduct input[name="name"]');
+    const category = document.querySelector('#editproduct select[name="category"]');
+    const image = document.querySelector('#editproduct input[name="images"]');
+    const price = document.querySelector('#editproduct input[name="price"]');
+    let rq = await fetch("http://localhost:3000/products/"+id);
+    let product =await rq.json();
+    console.log(product);
+    // Truyền dữ liệu vào ô input
+    name.value=product.name;
+    category.value = product.category;
+    image.value = product.image;
+    price.value = product.price;
+    //Truyền id vào ô input id.
+    document.querySelector('#editproduct input[name="id"]').value=id;
+    document.querySelector("#editproduct").classList.add("show");
 }

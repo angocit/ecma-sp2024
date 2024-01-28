@@ -54,22 +54,22 @@ const addToCart=(id)=>{
     else {        
         //chuyển cart từ string sang json.
         let cartArr = JSON.parse(cart);
-        let ktra = false;
-        let keyvalue = -1;
+        let ktra = false; // Biến này để kiểm tra sản phẩm có tồn tại trong giỏ hàng không. Mặc định là không
+        let keyvalue = -1; // Biến này để kiểm tra vị trí xuất hiện của sản phẩm nếu nó tồn tại trong giỏ hàng
         cartArr.map((value,key)=>{
             //nếu id sản phẩm bằng với giá trị pid của item
-            if (value.pid ==id){
+            if (value.pid ==id){ // Nếu sản phẩm có xuất trong giỏ hàng
                 ktra=true;
                 keyvalue = key;
             }
         });
-        if (ktra){
-            cartArr[keyvalue].quantity = cartArr[keyvalue].quantity+1;
-            localStorage.setItem('cart',JSON.stringify(cartArr));
+        if (ktra){ // Nếu sản phẩm xuất hiện trong giỏ hàng
+            cartArr[keyvalue].quantity = cartArr[keyvalue].quantity+1; // Tăng số lượng sản phẩm
+            localStorage.setItem('cart',JSON.stringify(cartArr)); // Đặt lại giá trị của giỏ hàng
         }
-        else {
-            cartArr.push(data);
-            localStorage.setItem('cart',JSON.stringify(cartArr));
+        else { // Nếu sản phẩm không có trong giỏ hàng
+            cartArr.push(data); // Push sản phẩm vào mảng giỏ hàng
+            localStorage.setItem('cart',JSON.stringify(cartArr)); // Đặt lại giá trị của giỏ hàng
         }
     }
     // Gọi hàm đổ số lượng giỏ hàng vào vị trí xe đẩy

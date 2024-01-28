@@ -1,20 +1,29 @@
 const renderProduct=async()=>{
     try{
-    const response = await fetch('http://localhost:3000/products');
-    const product = await response.json();
+    const response = await fetch('http://localhost:3000/products'); // Dữ liệu trả về kiểu Response
+    const product = await response.json(); // Dữ liệu trả về dạng mảng.
+// console.log(product);
+// Khai báo vị trí đổ dữ liệu
     const content = document.getElementById('product-content');
+    //Duyệt mảng dữ liệu trả về từ API
     product.map(({id,name,image,price})=>{
+        // Tạo mới một node con.
         const div = document.createElement('div');
+        // Tạo thuộc tính class cho node con
         div.classList.add('col-2');
         div.classList.add('col-sm-4');
         div.classList.add('col-md-3');
+        // Đưa dữ liệu html vào trong node con vừa tạo.
         div.innerHTML=`
             <img src="${image}"/>
             <h3>${name}</h3>
             <span>${price}</span> <br>
             <button onClick="addToCart(${id})" class="btn btn-primary">Add to Cart</button>
         `;
-        content.appendChild(div);
+        //Dòng 21 là tạo nút thêm vào giỏ hàng với sự kiện click thì gọi hàm addToCart.
+        content.appendChild(div); // Push node con vào vị trí đổ dữ liệu
+         // Gọi hàm đổ số lượng giỏ hàng vào vị trí xe đẩy
+        RenderTotalQuantityCart();
     });
     }
     catch(e){
@@ -63,11 +72,54 @@ const addToCart=(id)=>{
             localStorage.setItem('cart',JSON.stringify(cartArr));
         }
     }
+    // Gọi hàm đổ số lượng giỏ hàng vào vị trí xe đẩy
+    RenderTotalQuantityCart();
 }
 const delCart =()=>{
     localStorage.removeItem('cart');
 }
 const checkCart=()=>{
-    const cart = localStorage.getItem('cart');
-    console.log(JSON.parse(cart));
+    // const cart = localStorage.getItem('cart');
+    // console.log(JSON.parse(cart));
+    RenderTotalQuantityCart();
+}
+
+//Hàm tính tổng số lượng sản phẩm trong giỏ hàng
+// Phương pháp:
+// - Duyệt mảng
+    // mỗi lần duyệt thì cộng với gia stri của quantity
+
+const RenderTotalQuantityCart=()=>{
+    // Mục tiêu: Đổ số lượng vào vị trí hình xe đẩy.
+// Phương pháp:
+//  - Kiểm tra đã tồn tại giỏ hàng chưa?
+        //  - Nếu không tồn tại thì không làm gì cả.
+        //  - Nếu tồn tại thì:
+// - Truy cập đến node vị trí xe đẩy
+// - Đổ dữ liệu số lượng vào vị trí xe đẩy
+
+// - Lấy dữ liệu từ giỏ hàng
+const carts = localStorage.getItem('cart');
+// Kiểm tra giỏ hàng có tồn tại hay không.
+if (carts !== null){
+//truy cập node là vị trí xe đẩy
+const cartItem = document.querySelector('#cart .quantity');
+    // Chuyển dữ liệu của giỏ hàng sang JSON.
+    const cart = JSON.parse(carts); // Dữ liệu tra về dạng mảng
+    console.log(cart);
+    // Duyệt mảng.
+    // Cách 1 - Dùng reduce.
+    let tong = cart.reduce((result,value)=>{
+        return result+=value.quantity;
+    },0);
+    // Cách 2  dùng For.
+    // let tong = 0;
+    // for (let item of cart){
+    //     tong+=item.quantity;
+    // }
+
+// console.log(cartItem);
+    // Đổ dữ liệu.
+    cartItem.innerHTML = tong;
+}
 }

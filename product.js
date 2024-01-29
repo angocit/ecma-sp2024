@@ -57,7 +57,6 @@ const addToCart=(id)=>{
         let ktra = false; // Biến này để kiểm tra sản phẩm có tồn tại trong giỏ hàng không. Mặc định là không
         let keyvalue = -1; // Biến này để kiểm tra vị trí xuất hiện của sản phẩm nếu nó tồn tại trong giỏ hàng
         cartArr.map((value,key)=>{
-            //nếu id sản phẩm bằng với giá trị pid của item
             if (value.pid ==id){ // Nếu sản phẩm có xuất trong giỏ hàng
                 ktra=true;
                 keyvalue = key;

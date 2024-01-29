@@ -9,7 +9,7 @@ const renderProduct=async()=>{
     product.map(({id,name,image,price})=>{
         // Tạo mới một node con.
         const div = document.createElement('div');
-        // Tạo thuộc tính class cho node con
+        // Tạo thuộc tính class (Attribute) cho node con
         div.classList.add('col-2');
         div.classList.add('col-sm-4');
         div.classList.add('col-md-3');
@@ -22,7 +22,7 @@ const renderProduct=async()=>{
         `;
         //Dòng 21 là tạo nút thêm vào giỏ hàng với sự kiện click thì gọi hàm addToCart.
         content.appendChild(div); // Push node con vào vị trí đổ dữ liệu
-         // Gọi hàm đổ số lượng giỏ hàng vào vị trí xe đẩy
+         // Gọi hàm đổ số lượng sản phẩm trong giỏ hàng vào vị trí xe đẩy
         RenderTotalQuantityCart();
     });
     }
@@ -98,6 +98,7 @@ const RenderTotalQuantityCart=()=>{
 // - Truy cập đến node vị trí xe đẩy
 // - Đổ dữ liệu số lượng vào vị trí xe đẩy
 
+//Cách làm:
 // - Lấy dữ liệu từ giỏ hàng
 const carts = localStorage.getItem('cart');
 // Kiểm tra giỏ hàng có tồn tại hay không.

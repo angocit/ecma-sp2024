@@ -110,7 +110,7 @@ const cartItem = document.querySelector('#cart .quantity');
     // Duyệt mảng.
     // Cách 1 - Dùng reduce.
     let tong = cart.reduce((result,value)=>{
-        return result+=value.quantity;
+        return result+=Number(value.quantity);
     },0);
     // Cách 2  dùng For.
     // let tong = 0;

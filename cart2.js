@@ -36,7 +36,7 @@ const rederCart = async()=>{
                 <td><input data="${item.pid}" type ="number" value="${item.quantity}" onchange="changeQuantity(this)"/></td>
                 <td>${product.price}</td>
                 <td>${product.price*item.quantity}</td>
-                <td>Xóa</td>
+                <td><button data="${item.pid}" class="btn btn-danger" onclick="delCart(this)">Xóa</button></td>
             `;
             // Đổ dữ liệu vào tbody
             tbody.appendChild(tr);
@@ -82,6 +82,25 @@ const changeQuantity = (el)=>{
     // Thay đổi số lượng tại vị trí sản phẩm xuất hiện
     cartArr[keyvalue].quantity = quantity;
     // Set lại giỏ hàng theo giá trị mới
+    localStorage.setItem('cart',JSON.stringify(cartArr));
+    rederCart();
+}
+const delCart = (el)=>{
+    //lấy id sản phẩm
+    let pid = el.getAttribute('data');
+    // lấy thông tin giỏ hàng
+    const cart = localStorage.getItem('cart');
+    // chuyển dữ liệu giỏ hàng sang json
+    const cartArr = JSON.parse(cart);
+    // Kiểm tra vị trí xuất hiện của sản phẩm trong giỏ hàng
+    let keyvalue = -1; // Biến này để kiểm tra vị trí xuất hiện của sản phẩm nếu nó tồn tại trong giỏ hàng
+    cartArr.map((value,key)=>{
+        if (value.pid ==pid){ // Nếu sản phẩm có xuất trong giỏ hàng
+            keyvalue = key;
+        }
+    });
+    cartArr.splice(keyvalue,1);
+    // cập nhật lại giỏ hàng
     localStorage.setItem('cart',JSON.stringify(cartArr));
     rederCart();
 }

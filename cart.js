@@ -53,6 +53,7 @@ const rederCart =async ()=>{
         // Đổ tổng tiền vào node tổng tiền. => truy cập vào node tổng tiền.
         console.log(tongtien);
         const total = document.querySelector('#total span');
+        // Đổ dữ liệu tổng tiền vào node
         total.innerHTML = tongtien;
     }
 }

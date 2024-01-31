@@ -1,33 +1,43 @@
 {
   "order": [
     {
-      "id": "9ce0",
-      "hoten": {},
-      "diachi": {},
-      "sdt": {},
-      "status": "Đang xử lý",
-      "created_date": "2024-01-31T02:10:33.663Z"
+      "id": "6891",
+      "customer_name": "Ngọc",
+      "customer_address": "HN",
+      "customer_phone_number": "09889999898",
+      "created_date": "2024-01-31T13:21:38.918Z",
+      "status": "Đang xử lý"
     },
     {
-      "id": "40ec",
-      "hoten": {},
-      "diachi": {},
-      "sdt": {},
-      "status": "Đang xử lý",
-      "created_date": "2024-01-31T11:46:10.314Z"
+      "id": "c95c",
+      "customer_name": "Hùng",
+      "customer_address": "TN",
+      "customer_phone_number": "423423423432",
+      "created_date": "2024-01-31T13:23:03.540Z",
+      "status": "Đang xử lý"
     }
   ],
   "order_details": [
     {
-      "id": "9122",
-      "product_id": 2,
-      "quantity": "3"
+      "id": "d8ff",
+      "order_id": "6891",
+      "product_id": 4,
+      "quantity": 3,
+      "unit_price": 300000
     },
     {
-      "id": "895e",
-      "order_id": "40ec",
+      "id": "3073",
+      "order_id": "6891",
       "product_id": 2,
-      "quantity": "3"
+      "quantity": 4,
+      "unit_price": 320000
+    },
+    {
+      "id": "1bee",
+      "order_id": "c95c",
+      "product_id": 4,
+      "quantity": "4",
+      "unit_price": 400000
     }
   ],
   "products": [

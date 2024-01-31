@@ -63,7 +63,7 @@ const addToCart=(id)=>{
             }
         });
         if (ktra){ // Nếu sản phẩm xuất hiện trong giỏ hàng
-            cartArr[keyvalue].quantity = cartArr[keyvalue].quantity+1; // Tăng số lượng sản phẩm
+            cartArr[keyvalue].quantity = Number(cartArr[keyvalue].quantity)+1; // Tăng số lượng sản phẩm
             localStorage.setItem('cart',JSON.stringify(cartArr)); // Đặt lại giá trị của giỏ hàng
         }
         else { // Nếu sản phẩm không có trong giỏ hàng

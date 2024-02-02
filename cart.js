@@ -30,7 +30,6 @@ const rederCart =async ()=>{
         // lấy dữ liệu sản phẩm thông qua id sản phẩm``
         const product = await getProductById(item.pid);
         // Tạo một node con chứa thông tin sản phẩm
-
         const tr = document.createElement('tr');
         //Đổ dữ liệu html vào node con.
         tr.innerHTML=`

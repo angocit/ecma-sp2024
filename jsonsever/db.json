@@ -15,6 +15,22 @@
       "customer_phone_number": "423423423432",
       "created_date": "2024-01-31T13:23:03.540Z",
       "status": "Đang xử lý"
+    },
+    {
+      "id": "2e7e",
+      "customer_name": "Ngọc aaa",
+      "customer_address": "HN",
+      "customer_phone_number": "09898989898",
+      "status": "Đang xử lý",
+      "created_date": "2024-02-02T01:59:03.059Z"
+    },
+    {
+      "id": "ab6b",
+      "customer_name": "Check out test",
+      "customer_address": "Test",
+      "customer_phone_number": "0988888444",
+      "status": "Đang xử lý",
+      "created_date": "2024-02-02T02:00:33.600Z"
     }
   ],
   "order_details": [
@@ -38,6 +54,27 @@
       "product_id": 4,
       "quantity": "4",
       "unit_price": 400000
+    },
+    {
+      "id": "4eac",
+      "order_id": "2e7e",
+      "product_id": 4,
+      "quantity": "4",
+      "unit_price": 400000
+    },
+    {
+      "id": "84bb",
+      "order_id": "ab6b",
+      "product_id": 4,
+      "quantity": "6",
+      "unit_price": 600000
+    },
+    {
+      "id": "6b39",
+      "order_id": "ab6b",
+      "product_id": 2,
+      "quantity": 1,
+      "unit_price": 80000
     }
   ],
   "products": [

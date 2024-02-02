@@ -59,9 +59,9 @@ const rederCart =async ()=>{
 }
 const checkOut=async()=>{
     event.preventDefault();
-    let hoten = document.querySelector('input[name="name"]');
-    let diachi = document.querySelector('input[name="address"]');
-    let sdt = document.querySelector('input[name="phone"]');
+    let hoten = document.querySelector('input[name="name"]').value;
+    let diachi = document.querySelector('input[name="address"]').value;
+    let sdt = document.querySelector('input[name="phone"]').value;
     let status = "Đang xử lý";
     let created_date = new Date();
     // Update thoogn tin khách hàng vào trong order đồng thời update thông tin đơn hàng vào mục order_details
@@ -69,7 +69,7 @@ const checkOut=async()=>{
     const order = await fetch('http://localhost:3000/order',
     {
         method: 'POST',
-        body: JSON.stringify({hoten,diachi,sdt,status,created_date})
+        body: JSON.stringify({customer_name:hoten,customer_address:diachi,customer_phone_number:sdt,status:status,created_date:created_date})
     }
     );
     // Lấy ID của order
@@ -78,11 +78,19 @@ const checkOut=async()=>{
     let cart = localStorage.getItem('cart');
     cart = JSON.parse(cart);
     for (let item of cart) {
+        // lấy thông tin sản phẩm
+        const product = await getProductById(item. pid);
+        console.log(item);
         // Insert từng sna rphamar vào order_details
         await fetch('http://localhost:3000/order_details',
             {
                 method: 'POST',
-                body: JSON.stringify({order_id:order_id.id,product_id:item.pid,quantity:item.quantity})
+                body: JSON.stringify({
+                    order_id:order_id.id,
+                    product_id:item.pid,
+                    quantity:item.quantity,
+                    unit_price: item.quantity*product.price
+                })
             }
             );
     }

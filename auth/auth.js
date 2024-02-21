@@ -5,12 +5,25 @@ const Register= async()=>{
     const email = document.querySelector('input[name="email"]').value;
     const password = document.querySelector('input[name="password"]').value;
     // gửi request phương thức post lên api json-server-auth: http://localhost:3000/register
+    try{
     const res = await fetch('http://localhost:3000/register',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({name: name, email: email, password: password})
         });
-    const data = await res.json();
+    if (res.status==400){
+        console.log(res.statusText);
+    }
+    else {
+        const data = await res.json();
+        console.log(data);
+        alert('Đăng ký thành công');
+    }
+}
+catch (err){
+    console.log(err);
+}
+    
 }
 const Login= async()=>{
     event.preventDefault();

@@ -139,6 +139,30 @@
       "password": "$2a$10$otkB4qvtP.f3Xqx.Trcmo.ksKbmmdFCqHzLsS854NB.Jby4e3.z1u",
       "name": "sdfsdf",
       "id": 3
+    },
+    {
+      "email": "abcd@gmail.com",
+      "password": "$2a$10$hINgrdLrtbtcY54WDv5pRutjRzybZQeMEHbSpQUUU1wMUSrualTGa",
+      "name": "Giày nữ ABC",
+      "id": 4
+    },
+    {
+      "email": "ngoc.ngovan168@gmail.com",
+      "password": "$2a$10$a20GLEr/1GRbA8ux/MRCOelAW.GTVRf3xTPNG/QcZgpqbJUywiBGq",
+      "name": "Giày nữ ABC",
+      "id": 5
+    },
+    {
+      "email": "ngocnv34@aat.edu.vn",
+      "password": "$2a$10$IiG7OUeqOBh9BORhTA7VFO1EJn3o8uyuNYAw9kFS0pq044WcxYE4W",
+      "name": "Giày nữ ABC",
+      "id": 6
+    },
+    {
+      "email": "ngocnv34@fpt.edu.vn33",
+      "password": "$2a$10$2wVuN/UMxkltJfis.ckZ/OMqmYCWdlJ8TrltgdGKv7LrXs7n8T5ka",
+      "name": "Giày nữ ABC",
+      "id": 7
     }
   ]
 }

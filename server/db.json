@@ -1,0 +1,144 @@
+{
+  "order": [
+    {
+      "id": "6891",
+      "customer_name": "Ngọc",
+      "customer_address": "HN",
+      "customer_phone_number": "09889999898",
+      "created_date": "2024-01-31T13:21:38.918Z",
+      "status": "Đang xử lý"
+    },
+    {
+      "id": "c95c",
+      "customer_name": "Hùng",
+      "customer_address": "TN",
+      "customer_phone_number": "423423423432",
+      "created_date": "2024-01-31T13:23:03.540Z",
+      "status": "Đang xử lý"
+    },
+    {
+      "id": "2e7e",
+      "customer_name": "Ngọc aaa",
+      "customer_address": "HN",
+      "customer_phone_number": "09898989898",
+      "status": "Đang xử lý",
+      "created_date": "2024-02-02T01:59:03.059Z"
+    },
+    {
+      "id": "ab6b",
+      "customer_name": "Check out test",
+      "customer_address": "Test",
+      "customer_phone_number": "0988888444",
+      "status": "Đang xử lý",
+      "created_date": "2024-02-02T02:00:33.600Z"
+    }
+  ],
+  "order_details": [
+    {
+      "id": "d8ff",
+      "order_id": "6891",
+      "product_id": 4,
+      "quantity": 3,
+      "unit_price": 300000
+    },
+    {
+      "id": "3073",
+      "order_id": "6891",
+      "product_id": 2,
+      "quantity": 4,
+      "unit_price": 320000
+    },
+    {
+      "id": "1bee",
+      "order_id": "c95c",
+      "product_id": 4,
+      "quantity": "4",
+      "unit_price": 400000
+    },
+    {
+      "id": "4eac",
+      "order_id": "2e7e",
+      "product_id": 4,
+      "quantity": "4",
+      "unit_price": 400000
+    },
+    {
+      "id": "84bb",
+      "order_id": "ab6b",
+      "product_id": 4,
+      "quantity": "6",
+      "unit_price": 600000
+    },
+    {
+      "id": "6b39",
+      "order_id": "ab6b",
+      "product_id": 2,
+      "quantity": 1,
+      "unit_price": 80000
+    }
+  ],
+  "products": [
+    {
+      "name": "Váy Chữ A Thiết Kế Cổ Bẻ Dáng Dài VCAFM3 Edit",
+      "price": "80000",
+      "image": "https://hellomida.vn/wp-content/uploads/2023/09/624f423a-6ba2-48ee-a659-4e7529ef0c61-600x900.jpg",
+      "category": "1",
+      "id": "2"
+    },
+    {
+      "name": "Giày nữ ABC",
+      "price": "100000",
+      "image": "https://cdn.shopify.com/s/files/1/1404/4249/files/2021-05-06.GRC02_480x480.jpg?v=1620294739",
+      "category": "2",
+      "id": "4"
+    },
+    {
+      "name": "Giày nữ ABC 2",
+      "price": "120000",
+      "image": "https://cdn.shopify.com/s/files/1/1404/4249/files/2021-05-06.GRC02_480x480.jpg?v=1620294739",
+      "category": "1",
+      "id": "4"
+    },
+    {
+      "name": "Giày nữ ABC 3",
+      "price": "10000",
+      "image": "https://cdn.shopify.com/s/files/1/1404/4249/files/2021-05-06.GRC02_480x480.jpg?v=1620294739",
+      "category": "1",
+      "id": "4"
+    }
+  ],
+  "categorys": [
+    {
+      "id": "1",
+      "name": "Quần áo"
+    },
+    {
+      "id": "2",
+      "name": "Giày dép"
+    },
+    {
+      "id": "3",
+      "name": "Phụ kiện"
+    }
+  ],
+  "users": [
+    {
+      "email": "ngocnv34@fpt.edu.vn",
+      "password": "$2a$10$ueccpI9bwoEuUinAI.KGhuRrf3eUPaL3t9WnFNcKbjES0yUMbLtGm",
+      "name": "Giày nữ ABC",
+      "id": 1
+    },
+    {
+      "email": "ngocnv34@gmail.com",
+      "password": "$2a$10$OOTfCh.L.rFgk4m3N.Rvz.NMg6gv7UOSDLUOFQsim1ds9sqV1pU8q",
+      "name": "Giày nữ ABC",
+      "id": 2
+    },
+    {
+      "email": "chippr7@gmail.com",
+      "password": "$2a$10$otkB4qvtP.f3Xqx.Trcmo.ksKbmmdFCqHzLsS854NB.Jby4e3.z1u",
+      "name": "sdfsdf",
+      "id": 3
+    }
+  ]
+}

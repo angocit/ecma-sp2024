@@ -1,3 +1,10 @@
+let user = localStorage.getItem('user');
+user = JSON.parse(user);
+console.log(user.user.id);
+if (Number(user.user.id) >1){
+    document.querySelector('body').innerHTML ="Bạn không có quyền truy cập trang này";
+} 
+
 const loadProducts = async ()=>{
     let data = await fetch('http://localhost:3000/products');
     let res = await data.json();

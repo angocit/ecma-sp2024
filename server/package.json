@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "auth":"json-server db.json -m ./node_modules/json-server-auth",
+    "server":"npx json-server db.json --p 8000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  }
+}
